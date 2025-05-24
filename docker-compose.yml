@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  database:
+    image: mongo:latest
+    container_name: pluto-mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: docker
+      MONGO_INITDB_ROOT_PASSWORD: docker
+      MONGO_INITDB_DATABASE: pluto-mongo
+    ports:
+      - 27017:27017
+    volumes:
+      - pluto_mongo_data:/data/db
+
+volumes:
+  pluto_mongo_data:
